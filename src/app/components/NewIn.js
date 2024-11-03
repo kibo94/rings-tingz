@@ -16,6 +16,7 @@ function NewIn() {
             'direction': 'asc'
         }
     });
+    console.log(items)
     if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error loading recommended items</div>;
     return (
@@ -38,7 +39,7 @@ function NewIn() {
                             <SwiperSlide key={index} className='pb-4'>
                                 <Image src={item.image_data[0].url} width={100} height={100} className='mb-10' alt={item.slug} />
                                 <h4 className='text-primary text-xs'>{item.basic_data.brand_name == null ? "Brand Name" : item.basic_data.brand_name}</h4>
-                                <p className="text-sm">PATHNERE DE CARTIER BRACELET</p>
+                                <p className="text-sm"> {item.basic_data.name != null ? item.basic_data.name : "PATHNERE DE CARTIER BRACELET"}  </p>
                                 <div className='flex mt-2'>
                                     <h5 className='font-jost-400' style={{ "textDecoration": item.price.discount.active ? " line-through" : 'none' }}>{item.price.price.original}
                                         {item.price.currency}</h5>
