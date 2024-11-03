@@ -16,7 +16,6 @@ function NewIn() {
             'direction': 'asc'
         }
     });
-    console.log(items)
     if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error loading recommended items</div>;
     return (
